@@ -10,11 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code 
-        steps: echo" Code Clone from Github"
+        steps: echo " Code Clone from Github"
   build:
     runs-on: ubuntu-latest
     steps:
-        
       - name: Build Docker Container
         steps: echo "Docker Container Build"
   test:
