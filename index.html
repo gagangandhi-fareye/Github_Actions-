@@ -4,36 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gagan's Portfolio</title>
+    <title>Gagan Gandhi | Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background: #0f172a;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
         }
 
+        /* Navbar */
         header {
             display: flex;
             justify-content: space-between;
-            padding: 20px 50px;
-            background: #020617;
-        }
-
-        header h1 {
-            color: #38bdf8;
+            padding: 20px 60px;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         nav a {
             margin-left: 20px;
             text-decoration: none;
-            color: white;
+            color: #cbd5f5;
             transition: 0.3s;
         }
 
@@ -41,13 +41,30 @@
             color: #38bdf8;
         }
 
+        /* Hero */
         .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 100px 20px;
         }
 
-        .hero h2 {
-            font-size: 40px;
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: 0.4s;
+        }
+
+        .glass:hover {
+            transform: scale(1.03);
+        }
+
+        .hero h1 {
+            font-size: 42px;
         }
 
         .hero span {
@@ -60,39 +77,71 @@
         }
 
         .btn {
+            margin-top: 15px;
             padding: 10px 20px;
-            background: #38bdf8;
             border: none;
+            background: #38bdf8;
             color: black;
+            border-radius: 6px;
             cursor: pointer;
-            border-radius: 5px;
+            transition: 0.3s;
         }
 
+        .btn:hover {
+            background: #0ea5e9;
+            transform: scale(1.1);
+        }
+
+        /* Section */
         section {
-            padding: 60px 50px;
+            padding: 80px 60px;
         }
 
-        .projects {
+        /* Cards */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
-            background: #1e293b;
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+            background: rgba(56, 189, 248, 0.15);
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 10px;
             transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
+        .skill:hover {
+            background: #38bdf8;
+            color: black;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            background: #020617;
+            background: rgba(0, 0, 0, 0.4);
         }
     </style>
 </head>
@@ -100,45 +149,89 @@
 <body>
 
     <header>
-        <h1>Gagan</h1>
+        <h2>Gagan</h2>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#devops">DevOps</a>
         </nav>
     </header>
 
-    <div class="hero">
-        <h2>Hi, I'm <span>Gagan</span> 👋</h2>
-        <p>Frontend Developer | MERN Stack Learner</p>
-        <button class="btn">View My Work</button>
-    </div>
-
-    <section>
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="card">
-                <h3>Revora Website</h3>
-                <p>E-commerce frontend using React & Tailwind.</p>
-            </div>
-            <div class="card">
-                <h3>Airbnb Clone</h3>
-                <p>Full stack booking app using MERN.</p>
-            </div>
-            <div class="card">
-                <h3>Portfolio</h3>
-                <p>Personal portfolio website.</p>
-            </div>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="glass">
+            <h1>Hi, I'm <span>Gagan Gandhi</span> 👋</h1>
+            <p>MERN Stack Developer | DevOps Learner</p>
+            <p>Building scalable apps & exploring cloud + automation</p>
+            <button class="btn">View Projects</button>
         </div>
     </section>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Email: your@email.com</p>
+    <!-- Projects -->
+    <section id="projects">
+        <h2>🚀 Projects</h2><br>
+        <div class="grid">
+
+            <div class="card">
+                <h3>Revora E-commerce</h3>
+                <p>Frontend using React & Tailwind CSS for a fashion startup.</p>
+            </div>
+
+            <div class="card">
+                <h3>Airbnb Clone</h3>
+                <p>Full-stack MERN app with booking system and authentication.</p>
+            </div>
+
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <p>Modern responsive portfolio with glass UI design.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2>💡 Development Skills</h2><br>
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">React</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">Express</div>
+            <div class="skill">MongoDB</div>
+            <div class="skill">DSA (150+ LeetCode)</div>
+        </div>
+    </section>
+
+    <!-- DevOps Section -->
+    <section id="devops">
+        <h2>⚙️ DevOps Journey</h2><br>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Tools & Technologies</h3>
+                <p>Learning Docker, Kubernetes, GitHub Actions, CI/CD pipelines, and Linux.</p>
+            </div>
+
+            <div class="card">
+                <h3>Cloud & Deployment</h3>
+                <p>Exploring deployment strategies, GitHub Pages, and scalable architecture.</p>
+            </div>
+
+            <div class="card">
+                <h3>Current Focus</h3>
+                <p>Working towards SRE/DevOps role by combining development + infrastructure skills.</p>
+            </div>
+
+        </div>
     </section>
 
     <footer>
-        <p>© 2026 Gagan. All rights reserved.</p>
+        <p>© 2026 Gagan Gandhi | Built with ❤️</p>
     </footer>
 
 </body>
