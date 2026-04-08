@@ -1,7 +1,5 @@
-# This is only the name of the workflow which will represent everything 
 name: CICD
 
-# Manual Clicks 
 on:
   workflow_dispatch:
 
@@ -9,16 +7,19 @@ jobs:
   code:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code 
-        steps: echo " Code Clone from Github"
+      - name: Checkout code
+        run: echo "Code Cloned from GitHub"
+
   build:
     runs-on: ubuntu-latest
+    needs: code   # 👈 dependency
     steps:
       - name: Build Docker Container
-        steps: echo "Docker Container Build"
+        run: echo "Docker Container Build"
+
   test:
     runs-on: ubuntu-latest
+    needs: build   # 👈 dependency
     steps:
-      - name: deploying the app 
-        steps: echo "Testing the docker file"
-          
+      - name: Testing the app
+        run: echo "Testing the docker file"
